@@ -52,3 +52,20 @@ class SaleOrder(models.Model):
             # - Dựa trên tổng tiền đơn hàng
             # - Dựa trên company / department
             # - Dựa trên chính sách phê duyệt nhiều cấp
+
+
+    # 🔵 Submit
+    def action_submit_approval(self):
+        for order in self:
+            order.approval_state = "pending"
+
+    # 🟢 Approve
+    def action_approve(self):
+        for order in self:
+            order.approval_state = "approved"
+
+    # 🔴 Reject
+    def action_reject(self):
+        for order in self:
+            order.approval_state = "rejected"
+

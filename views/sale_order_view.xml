@@ -1,3 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="view_sale_order_form_approval" model="ir.ui.view">
+        <field name="name">sale.order.form.approval</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+
+                <!-- STATUSBAR -->
+                <field name="approval_state"
+                       widget="statusbar"
+                       statusbar_visible="none,pending,approved,rejected"/>
+
+                <!-- BUTTONS -->
+                <button name="action_submit_approval"
+                        type="object"
+                        string="Submit for Approval"
+                        class="btn-primary"
+                        invisible="approval_state != 'none'"/>
+
+                <button name="action_approve"
+                        type="object"
+                        string="Approve"
+                        class="btn-success"
+                        invisible="approval_state != 'pending'"/>
+
+                <button name="action_reject"
+                        type="object"
+                        string="Reject"
+                        class="btn-danger"
+                        invisible="approval_state != 'pending'"/>
+
+            </xpath>
+
+        </field>
+    </record>
 </odoo>
