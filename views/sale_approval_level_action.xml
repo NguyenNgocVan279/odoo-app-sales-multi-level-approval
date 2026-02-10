@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_sale_approval_level" model="ir.actions.act_window">
+        <field name="name">Sales Approval Levels</field>
+        <field name="res_model">sale.approval.level</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p>
+                Define approval levels for Sales Orders based on total amount.
+            </p>
+        </field>
+    </record>
+
+</odoo>

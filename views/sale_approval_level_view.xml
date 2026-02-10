@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST VIEW -->
+    <record id="view_sale_approval_level_list" model="ir.ui.view">
+        <field name="name">sale.approval.level.list</field>
+        <field name="model">sale.approval.level</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="level"/>
+                <field name="amount_from"/>
+                <field name="amount_to"/>
+                <field name="group_id"/>
+                <field name="company_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_sale_approval_level_form" model="ir.ui.view">
+        <field name="name">sale.approval.level.form</field>
+        <field name="model">sale.approval.level</field>
+        <field name="arch" type="xml">
+            <form string="Sales Approval Level">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="level"/>
+                        <field name="group_id"/>
+                        <field name="company_id"/>
+                        <field name="active"/>
+                    </group>
+
+                    <group string="Amount Range">
+                        <field name="amount_from"/>
+                        <field name="amount_to"
+                               placeholder="Leave 0 for no limit"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

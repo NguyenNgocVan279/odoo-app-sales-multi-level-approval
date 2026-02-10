@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Sales Approval Root -->
+    <menuitem id="menu_sale_approval_root"
+        name="Sales Approval"
+        parent="sale.sale_menu_root"
+        sequence="90"/>
+
+    <!-- Configuration -->
+    <menuitem
+        id="menu_sale_approval_config"
+        name="Configuration"
+        parent="menu_sale_approval_root"
+        sequence="10"/>
+
+    <!-- Approval Levels -->
+    <menuitem
+        id="menu_sale_approval_level"
+        name="Approval Levels"
+        parent="menu_sale_approval_config"
+        action="action_sale_approval_level"
+        sequence="10"/>
+
+</odoo>
